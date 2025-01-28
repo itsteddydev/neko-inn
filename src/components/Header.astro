@@ -1,0 +1,93 @@
+---
+import IconMoon from "../icons/IconMoon.astro";
+import IconSun from "../icons/IconSun.astro";
+---
+
+<header
+  class="shadow-md inset-x-0 top-0 z-50 md:relative md:shadow-none md:bg-transparent px-7 pt-8 pb-4 bg-black/70"
+>
+  <!-- Contenedor principal del menú de navegación -->
+  <nav class="wrapper h-20 flex items-center justify-between">
+    <!-- Logo: Enlace que apunta a la página principal -->
+    <a href="./" class="md:w-1/3 max-w-[178px]">
+      <!-- Imagen del logo -->
+      <img src="/src/assets/logo.png" alt="logo" class="w-full" />
+    </a>
+
+    <!-- Input checkbox: Sirve para controlar la visibilidad del menú en dispositivos móviles -->
+    <input type="checkbox" id="menu" class="peer hidden" />
+
+    <!-- Label del checkbox: Botón de menú para abrir/cerrar (hamburguesa) en móviles -->
+    <label
+      for="menu"
+      class="bg-open-menu size-[51px] bg-cover bg-center cursor-pointer peer-checked:hidden md:hidden"
+    ></label>
+    <!-- `peer-checked:bg-close-menu` cambia el ícono cuando el menú está activo -->
+
+    <!-- Contenedor del menú desplegable -->
+    <div
+      class="fixed inset-y-0 right-0 w-[406px] bg-gradient-to-b from-white/70 to-black/70 translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-40 md:static md:translate-x-0 md:bg-none"
+    >
+      <!-- Menú: Lista de enlaces -->
+      <ul
+        class="absolute right-0 top-8 p-4 bg-day-main w-[80%] rounded-2xl h-max text-center grid gap-6 font-bold text-base text-white shadow-2xl
+    md:w-max md:static md:bg-transparent md:p-0 md:grid-flow-col"
+      >
+        <li>
+          <div class="flex justify-between items-center px-7 pt-3">
+            <!-- toggle-theme  -->
+            <!-- <label
+            for="menu"
+            class="bg-open-menu size-[51px] bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-all z-50 md:hidden"
+            ></label> -->
+            <div class="h-10 flex items-center bg-white/10 w-32 rounded-full">
+              <input type="checkbox" id="toggle-theme" class="peer hidden" />
+              <!-- <div
+                class="absolute w-32 flex justify-between items-center content-center ..."
+              >
+                <IconMoon class="size-8 z-50 ml-4" />
+                <IconSun class="size-8 z-50 mr-4" />
+              </div> -->
+              <label
+                for="toggle-theme"
+                class="h-10 w-16 px-[14px] py-1 rounded-full
+               bg-day-secondary
+                peer-checked:translate-x-full
+                translate-x-0
+                transition-transform
+                duration-300"
+              >
+              </label>
+            </div>
+
+            <label
+              for="menu"
+              class="bg-close-menu size-[51px] bg-cover bg-center cursor-pointer transition-transform duration-100 ease-in-out hover:rotate-180 z-50 md:hidden"
+            >
+            </label>
+          </div>
+        </li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li>
+          <div class="mt-4">
+            <button class="border-2 bg-day-secondary rounded-xl px-4 py-1"
+              >BOOK NOW</button
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Botón adicional (sólo visible en pantallas grandes) -->
+    <a
+      href="https://lytasoft.com"
+      target="_blank"
+      class="button shadow-bright-red/30 hidden py-3 lg:block">Get Started</a
+    >
+  </nav>
+</header>
