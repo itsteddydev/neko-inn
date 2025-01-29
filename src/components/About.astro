@@ -1,0 +1,57 @@
+---
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 my-3 mx-7 dark:bg-night-backgroundCard rounded-3xl"
+>
+  <div class="text-center">
+    <span
+      class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+    >
+      Your Trusted Cat Retreat
+    </span>
+    <h1 class="py-6 text-4xl font-bold dark:text-night-text">About NekoInn</h1>
+    <div>
+      <p class="text-xs px-8 text-pretty dark:text-night-text">
+        NekoInn is more than a cat boarding facility; it's a home away from home
+        for your furry family members. Nestled in serene surroundings, our inn
+        offers a tranquil retreat for cats of all shapes, sizes, and
+        personalities. With a team of dedicated caregivers passionate about
+        feline welfare, we ensure every guest receives love, attention, and
+        comfort. Rest easy knowing your cat is in caring hands at NekoInn.
+      </p>
+    </div>
+
+    <div class="flex justify-center my-6">
+      <LinkButton
+        href="/about"
+        class="dark:bg-day-main dark:text-night-text font-bold py-6 mx-7 text-xs w-full rounded-full"
+      >
+        BOOK NOW
+      </LinkButton>
+    </div>
+  </div>
+
+  <div class="relative pt-9 pb-2">
+    <img
+      src="/src/assets/img/stripes.png"
+      alt="stripes"
+      class="absolute right-[9%] top-[15%] object-cover"
+    />
+    <!-- <img
+      src="/src/assets/img/stripes.png"
+      alt="stripes"
+      class="absolute bottom-6 right-0 object-cover"
+    /> -->
+
+    <div class="relative mb-14">
+      <img
+        src="/src/assets/img/CatVectorized.png"
+        alt="Cat Vectorized"
+        class="w-[376px] h-[401px] object-none object-left hover:drop-shadow-md"
+      />
+    </div>
+  </div>
+</div>
