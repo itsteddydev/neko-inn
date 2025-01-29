@@ -59,15 +59,56 @@ import LinkButton from "./LinkButton.astro";
       </LinkButton>
     </div>
   </div>
-  <div class="px-7">
+  <div class="relative pt-9 pb-0">
     <img
-      src="/src/assets/img/cat_0.png"
-      alt="Cat sleeping"
-      class="rounded-lg
-       w-full shadow-lg
-       dark:shadow-none
-        dark:border-0
-        object-cover"
+      src="/src/assets/img/stripes.png"
+      alt="stripes"
+      class="absolute top-0 left-0 object-cover"
     />
+    <img
+      src="/src/assets/img/stripes.png"
+      alt="stripes"
+      class="absolute bottom-6 right-0 object-cover"
+    />
+
+    <div class="relative px-7">
+      <img
+        src="/src/assets/img/cat_0.png"
+        alt="Cat sleeping"
+        class="h-[352px] w-[352px]
+      mb-20 mt-0
+      aspect-square
+      rounded-tr-[60px]
+      rounded-br-[60px]
+      rounded-tl-[100px]
+      rounded-bl-[260px]
+      shadow-lg
+     border-2 border-day-main
+        object-none"
+      />
+
+      <span class="absolute top-0 right-0 h-[397px] w-full">
+        <img
+          class="absolute size-16 left-[2%] top-[18%] object-none object-top border-2 border-day-main rounded-full"
+          src="/src/assets/img/cat_1.png"
+          alt="cat 1"
+        />
+        <img
+          class="absolute size-16 left-[7%] top-[44%] object-none object-top border-2 border-day-main rounded-full"
+          src="/src/assets/img/cat_2.png"
+          alt="cat 2"
+        />
+        <img
+          class="absolute size-16 left-[22%] bottom-[18%] object-none object-top border-2 border-day-main rounded-full"
+          src="/src/assets/img/cat_3.png"
+          alt="cat 3"
+        />
+        <img
+          class="absolute size-16 left-[47%] bottom-[5%] object-none border-2 border-day-main rounded-full"
+          src="/src/assets/img/cat_4.png"
+          alt="cat 4"
+        />
+      </span>
+    </div>
   </div>
 </div>
