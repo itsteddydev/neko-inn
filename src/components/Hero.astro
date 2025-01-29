@@ -1,0 +1,73 @@
+---
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-20 dark:bg-night-backgroundCard rounded-b-3xl"
+>
+  <div class="text-center">
+    <span
+      class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+    >
+      Where Feline Comfort Comes First
+    </span>
+    <h1 class="py-6 text-4xl font-bold dark:text-night-text">
+      Your 5 Stars Purr Inn
+    </h1>
+    <div>
+      <p class="text-xs px-8 text-pretty dark:text-night-text">
+        At NekoInn, we understand that your beloved feline companion deserves
+        the best care, even when you can't be there. That's why we've created a
+        haven designed specifically for cats, where every whisker is cherished
+        and every purr is celebrated. From cozy accommodations to personalized
+        attention, we strive to provide a nurturing environment where your cat
+        can relax, play, and thrive while you're away. Welcome to NekoInn, where
+        your cat's comfort and happiness are our top priorities.
+      </p>
+    </div>
+
+    <div class="flex justify-center my-6">
+      <LinkButton
+        href="/about"
+        class="dark:bg-day-main dark:text-night-text font-bold py-6 mx-7 text-xs w-full rounded-full"
+      >
+        BOOK A PURR-SUITE
+      </LinkButton>
+    </div>
+
+    <div class="relative video-container px-7 my-16">
+      <img
+        src="/src/assets/img/catSleeping.png"
+        alt="Cat sleeping"
+        class="rounded-lg w-full max-h-28 shadow-lg dark:shadow-none dark:bg-night-background dark:border-0 object-cover z-10"
+      />
+      <div class="absolute text-left bottom-[10%] left-[10%]">
+        <h3 class="font-bold text-xs tracking-wide dark:text-night-text">
+          WATCH NOW
+        </h3>
+        <h2 class="font-bold text-base dark:text-night-text">
+          Introducing The NekoInn
+        </h2>
+      </div>
+
+      <LinkButton
+        href="/"
+        class="absolute bottom-[30%] right-[3%] dark:bg-day-main dark:text-night-text rounded-full p-2"
+      >
+        <IconPlayerPlay />
+      </LinkButton>
+    </div>
+  </div>
+  <div class="px-7">
+    <img
+      src="/src/assets/img/cat_0.png"
+      alt="Cat sleeping"
+      class="rounded-lg
+       w-full shadow-lg
+       dark:shadow-none
+        dark:border-0
+        object-cover"
+    />
+  </div>
+</div>

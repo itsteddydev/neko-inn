@@ -1,0 +1,7 @@
+---
+const { class: className } = Astro.props;
+---
+
+<a class=`${className}  ` {...Astro.props} rel="noopener noreferrer">
+  <slot />
+</a>
