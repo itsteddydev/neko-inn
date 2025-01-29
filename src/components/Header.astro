@@ -1,4 +1,5 @@
 ---
+import HeroButton from "../icons/HeroButton.astro";
 import IconMoon from "../icons/IconMoon.astro";
 import IconSun from "../icons/IconSun.astro";
 ---
@@ -14,51 +15,30 @@ import IconSun from "../icons/IconSun.astro";
       <img src="/src/assets/logo.png" alt="logo" class="w-full" />
     </a>
 
-    <!-- Input checkbox: Sirve para controlar la visibilidad del menú en dispositivos móviles -->
     <input type="checkbox" id="menu" class="peer hidden" />
 
-    <!-- Label del checkbox: Botón de menú para abrir/cerrar (hamburguesa) en móviles -->
     <label
       for="menu"
       class="bg-open-menu size-[51px] bg-cover bg-center cursor-pointer peer-checked:hidden md:hidden"
     ></label>
-    <!-- `peer-checked:bg-close-menu` cambia el ícono cuando el menú está activo -->
 
-    <!-- Contenedor del menú desplegable -->
     <div
       class="fixed inset-y-0 right-0 w-[406px] bg-gradient-to-b from-white/70 to-black/70 translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-40 md:static md:translate-x-0 md:bg-none"
     >
-      <!-- Menú: Lista de enlaces -->
       <ul
-        class="absolute right-0 top-8 p-4 bg-day-main w-[80%] rounded-2xl h-max text-center grid gap-6 font-bold text-base text-white shadow-2xl
+        class="absolute right-0 top-8 p-4 bg-day-main w-[80%] rounded-2xl h-max text-center grid gap-6 font-bold text-base text-white shadow-2xl dark:bg-night-main
     md:w-max md:static md:bg-transparent md:p-0 md:grid-flow-col"
       >
         <li>
           <div class="flex justify-between items-center px-7 pt-3">
-            <!-- toggle-theme  -->
-            <!-- <label
-            for="menu"
-            class="bg-open-menu size-[51px] bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-all z-50 md:hidden"
-            ></label> -->
-            <div class="h-10 flex items-center bg-white/10 w-32 rounded-full">
-              <input type="checkbox" id="toggle-theme" class="peer hidden" />
-              <!-- <div
-                class="absolute w-32 flex justify-between items-center content-center ..."
-              >
-                <IconMoon class="size-8 z-50 ml-4" />
-                <IconSun class="size-8 z-50 mr-4" />
-              </div> -->
-              <label
-                for="toggle-theme"
-                class="h-10 w-16 px-[14px] py-1 rounded-full
-               bg-day-secondary
-                peer-checked:translate-x-full
-                translate-x-0
-                transition-transform
-                duration-300"
-              >
-              </label>
-            </div>
+            <HeroButton
+              aria-label="btn-theme"
+              id="toggle-theme"
+              class="h-auto flex items-center bg-day-main border-2 p-1 w-auto rounded-full hover:bg-day-secondary hover:dark:bg-day-secondary transition-transform hover:rotate-180 dark:rotate-0 duration-100 ease-in-out"
+            >
+              <IconSun class="size-7 dark:hidden" />
+              <IconMoon class="size-7 hidden dark:inline" />
+            </HeroButton>
 
             <label
               for="menu"
@@ -91,3 +71,37 @@ import IconSun from "../icons/IconSun.astro";
     >
   </nav>
 </header>
+
+<script>
+  const themeToggle = document.getElementById("toggle-theme");
+  const htmlElement = document.documentElement;
+
+  // Detectar el esquema de color del sistema y aplicarlo al cargar la página
+  const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
+    .matches
+    ? "dark"
+    : "light";
+  if (preferredTheme === "dark") {
+    htmlElement.classList.add("dark");
+  } else {
+    htmlElement.classList.remove("dark");
+  }
+
+  // Escuchar cambios en el esquema de color del sistema
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (event) => {
+      if (event.matches) {
+        htmlElement.classList.add("dark");
+      } else {
+        htmlElement.classList.remove("dark");
+      }
+    });
+
+  // Alternar el tema manualmente con el botón
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      htmlElement.classList.toggle("dark");
+    });
+  }
+</script>
