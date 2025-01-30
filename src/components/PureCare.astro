@@ -1,0 +1,154 @@
+---
+import IconArrowNarrowRight from "../icons/IconArrowNarrowRight.astro";
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import LinkButton from "./LinkButton.astro";
+
+const images = [
+  "/src/assets/img/cat_9.png",
+  "/src/assets/img/cat_10.png",
+  "/src/assets/img/cat_11.png",
+  "/src/assets/img/cat_12.png",
+  "/src/assets/img/cat_2.png",
+  "/src/assets/img/cat_13.png",
+];
+
+let currentIndex = 0;
+
+const nextSlide = () => {
+  const slider = document.getElementById("slider");
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    updateSlider();
+  }
+};
+
+const prevSlide = () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateSlider();
+  }
+};
+
+const updateSlider = () => {
+  const slider = document.getElementById("slider");
+  if (slider) {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+};
+---
+
+<div class="grid grid-cols-1 gap-4 my-3 mx-7">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-4 gap-4 pb-12 dark:bg-night-backgroundCard rounded-3xl"
+  >
+    <card>
+      <div
+        class="text-left bg-day-main dark:bg-day-main rounded-3xl py-20 pl-9 pr-11"
+      >
+        <span
+          class="font-bold uppercase text-[10px] tracking-[0.1em] dark:text-day-secondary w-40 block"
+        >
+          Dedicated Care for Every Purrsonality
+        </span>
+
+        <h1 class="py-6 text-4xl font-bold dark:text-night-text">Purr Care</h1>
+        <div>
+          <p class="text-sm text-wrap dark:text-night-text">
+            Experience top-notch feline care with our Purr Care services. From
+            grooming to playtime, we provide personalized attention to ensure
+            your cat's happiness and well-being at NekoInn.
+          </p>
+        </div>
+
+        <div class="flex justify-start my-6">
+          <LinkButton
+            href="/about"
+            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+          >
+            <IconArrowNarrowRight />
+            BOOK NOW
+          </LinkButton>
+        </div>
+      </div>
+    </card>
+
+    <card
+      class="px-7 pt-2 pb-7 border-b-[1px] border-night-subtitles border-opacity-25"
+    >
+      <div class="">
+        <div class="py-6">
+          <img
+            src="/src/assets/img/cat_6.png"
+            alt="Cat Vectorized"
+            class="object-cover w-full h-full aspect-video rounded-3xl"
+          />
+        </div>
+      </div>
+      <div class="text-left">
+        <h1 class="py-1 text-2xl font-bold dark:text-night-text">
+          Grooming Spa:
+        </h1>
+        <div>
+          <p class="text-sm text-wrap pr-11 dark:text-night-text">
+            Indulge your cat in a pampering experience at our Grooming Spa. Our
+            skilled groomers provide gentle care and attention, from luxurious
+            baths to expert grooming sessions, leaving your cat looking and
+            feeling their best.
+          </p>
+        </div>
+      </div>
+    </card>
+    <card
+      class="px-7 pt-2 pb-7 border-b-[1px] border-night-subtitles border-opacity-25"
+    >
+      <div class="">
+        <div class="py-6">
+          <img
+            src="/src/assets/img/cat_7.png"
+            alt="Cat Vectorized"
+            class="object-cover w-full h-full aspect-video rounded-3xl"
+          />
+        </div>
+      </div>
+      <div class="text-left">
+        <h1 class="py-1 text-2xl font-bold dark:text-night-text">
+          Playtime Paradise:
+        </h1>
+        <div>
+          <p class="text-sm text-wrap pr-11 dark:text-night-text">
+            Let your cat unleash their playful side in our Playtime Paradise.
+            With a variety of engaging toys, climbing structures, and
+            interactive games, our supervised play sessions offer the perfect
+            opportunity for your cat to exercise, socialize, and have fun.
+          </p>
+        </div>
+      </div>
+    </card>
+    <card class="px-7 pt-2 pb-7">
+      <div class="">
+        <div class="py-6">
+          <img
+            src="/src/assets/img/cat_8.png"
+            alt="Cat Vectorized"
+            class="object-cover w-full h-full aspect-video rounded-3xl"
+          />
+        </div>
+      </div>
+      <div class="text-left">
+        <h1 class="py-1 text-2xl font-bold dark:text-night-text">
+          Gourmet Dining:
+        </h1>
+        <div>
+          <p class="text-sm text-wrap pr-11 dark:text-night-text">
+            Treat your cat's taste buds to a culinary delight with our Gourmet
+            Dining service. From premium cat cuisine to customized meal plans
+            tailored to their dietary needs, our gourmet chefs ensure that every
+            meal is both delicious and nutritious.
+          </p>
+        </div>
+      </div>
+    </card>
+  </div>
+
+  <div class="midiv"></div>
+</div>

@@ -1,0 +1,109 @@
+---
+import HeroButton from "../icons/HeroButton.astro";
+import IconChevronDown from "../icons/IconChevronDown.astro";
+
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-3 mx-7">
+  <div class="pb-2">
+    <div class="">
+      <img
+        src="/src/assets/img/cat_5.png"
+        alt="Cat Vectorized"
+        class="object-cover w-full h-full aspect-square rounded-3xl"
+      />
+    </div>
+  </div>
+
+  <div class="text-center">
+    <span
+      class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+    >
+      perfectly Tailored for Your Feline Friend
+    </span>
+    <h1 class="py-6 text-4xl font-bold dark:text-night-text">Our Rooms</h1>
+
+    <div class="divide-y-[1px] divide-night-subtitles divide-opacity-25">
+      <details class="group w-full">
+        <summary class="flex justify-between items-center cursor-pointer my-6">
+          <div class="relative flex items-center">
+            <HeroButton
+              class="absolute dark:bg-day-main dark:text-night-text rounded-full p-1 transition-transform group-open:rotate-180"
+            >
+              <IconChevronDown class="size-9" />
+            </HeroButton>
+            <h2 class="z-10 text-base font-bold text-white text-left pl-16">
+              Tailored Tranquility: Personalized Care for Every Cat
+            </h2>
+          </div>
+        </summary>
+        <div>
+          <p
+            class="text-sm pl-16 pb-6 text-left text-wrap dark:text-night-text"
+          >
+            NekoInn is more than a cat boarding facility; it's a home away from
+            home for your furry family members. Nestled in serene surroundings,
+            our inn offers a tranquil retreat for cats of all shapes, sizes, and
+            personalities. With a team of dedicated caregivers passionate about
+            feline welfare, we ensure every guest receives love, attention, and
+            comfort. Rest easy knowing your cat is in caring hands at NekoInn.
+          </p>
+        </div>
+      </details>
+      <details class="group w-full">
+        <summary class="flex justify-between items-center cursor-pointer my-6">
+          <div class="relative flex items-center">
+            <HeroButton
+              class="absolute dark:bg-day-main dark:text-night-text rounded-full p-1 transition-transform group-open:rotate-180"
+            >
+              <IconChevronDown class="size-9" />
+            </HeroButton>
+            <h2 class="z-10 text-base font-bold text-white text-left pl-16">
+              Palatial Purrfections: Opulence for Discerning Cats
+            </h2>
+          </div>
+        </summary>
+        <div>
+          <p
+            class="text-sm pl-16 pb-6 text-left text-wrap dark:text-night-text"
+          >
+            NekoInn is more than a cat boarding facility; it's a home away from
+            home for your furry family members. Nestled in serene surroundings,
+            our inn offers a tranquil retreat for cats of all shapes, sizes, and
+            personalities. With a team of dedicated caregivers passionate about
+            feline welfare, we ensure every guest receives love, attention, and
+            comfort. Rest easy knowing your cat is in caring hands at NekoInn.
+          </p>
+        </div>
+      </details>
+      <details class="group w-full">
+        <summary class="flex justify-between items-center cursor-pointer my-6">
+          <div class="relative flex items-center">
+            <HeroButton
+              class="absolute dark:bg-day-main dark:text-night-text rounded-full p-1 transition-transform group-open:rotate-180"
+            >
+              <IconChevronDown class="size-9" />
+            </HeroButton>
+            <h2 class="z-10 text-base font-bold text-white text-left pl-16">
+              Tailored Tranquility: Personalized Care for Every Cat
+            </h2>
+          </div>
+        </summary>
+        <div>
+          <p
+            class="text-sm pl-16 pb-6 text-left text-wrap dark:text-night-text"
+          >
+            NekoInn is more than a cat boarding facility; it's a home away from
+            home for your furry family members. Nestled in serene surroundings,
+            our inn offers a tranquil retreat for cats of all shapes, sizes, and
+            personalities. With a team of dedicated caregivers passionate about
+            feline welfare, we ensure every guest receives love, attention, and
+            comfort. Rest easy knowing your cat is in caring hands at NekoInn.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
