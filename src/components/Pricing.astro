@@ -1,0 +1,182 @@
+---
+import HeroButton from "../icons/HeroButton.astro";
+import IconArrowNarrowLeft from "../icons/IconArrowNarrowLeft.astro";
+import IconArrowNarrowRight from "../icons/IconArrowNarrowRight.astro";
+import IconCircleCheck from "../icons/IconCircleCheck.astro";
+import IconCrown from "../icons/IconCrown.astro";
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import IconRoyalCrown from "../icons/IconRoyalCrown.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div class="grid grid-cols-1 gap-4 mx-7">
+  <div class="text-center">
+    <span class="flex flex-col space-y-0">
+      <span
+        class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+      >
+        Transparent Rates for your purry
+      </span>
+
+      <span
+        class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+      >
+        companion
+      </span>
+    </span>
+    <h1 class="py-6 text-4xl font-bold dark:text-night-text">Pricing</h1>
+    <div>
+      <p class="text-sm text-pretty dark:text-night-text">
+        In our Pricing Section, transparency meets affordability. At NekoInn, we
+        believe in straightforward pricing, ensuring you have peace of mind
+        knowing exactly what to expect.
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-4 space-y-12 pb-12 rounded-3xl pt-9"
+  >
+    <!-- card 1 -->
+    <card>
+      <div
+        class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+      >
+        <span
+          class="font-bold uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
+        >
+          Purr Ducal <IconCrown />
+        </span>
+
+        <h2 class="py-6 text-4xl font-bold dark:text-night-text">
+          $160.99 <span class="text-sm">PER DAY</span>
+        </h2>
+        <div>
+          <ul
+            class="text-xs text-wrap dark:text-night-subtitles flex flex-col py-4 space-y-4"
+          >
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Standard Room Accommodation
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Basic Grooming
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Group Playtime
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck />Standard Meal Plan
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Daily Wellness Check
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <HeroButton
+            href="/about"
+            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+          >
+            <!-- <IconArrowNarrowRight /> -->
+            BOOK NOW
+          </HeroButton>
+        </div>
+      </div>
+    </card>
+    <!-- card 2 -->
+    <card>
+      <div
+        class="text-left bg-day-main dark:bg-day-main rounded-3xl py-9 px-10"
+      >
+        <span
+          class="font-bold uppercase text-base tracking-[0.1em] dark:text-night-text text-night-text flex items-center justify-between"
+        >
+          Purr imperial <IconRoyalCrown />
+        </span>
+
+        <h2 class="py-6 text-4xl font-bold dark:text-night-text">
+          $600.99 <span class="text-sm">PER DAY</span>
+        </h2>
+        <div>
+          <ul
+            class="text-xs text-wrap dark:text-night-text text-night-text flex flex-col py-4 space-y-4"
+          >
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Standard Room Accommodation
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Basic Grooming
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Group Playtime
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck />Standard Meal Plan
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Daily Wellness Check
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <HeroButton
+            href="/about"
+            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+          >
+            <!-- <IconArrowNarrowRight /> -->
+            BOOK NOW
+          </HeroButton>
+        </div>
+      </div>
+    </card>
+    <!-- card 3 -->
+    <card>
+      <div
+        class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+      >
+        <span
+          class="font-bold uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
+        >
+          Purr Ducal <IconCrown />
+        </span>
+
+        <h2 class="py-6 text-4xl font-bold dark:text-night-text">
+          $299.99<span class="text-sm">PER DAY</span>
+        </h2>
+        <div>
+          <ul
+            class="text-xs text-wrap dark:text-night-subtitles flex flex-col py-4 space-y-4"
+          >
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Luxury Suite Accommodation
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Deluxe Grooming Package
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> Private Playtime
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck />Premium Meal Plan
+            </li>
+            <li class="flex justify-start content-between items-center gap-2">
+              <IconCircleCheck /> VIP Wellness Check
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <HeroButton
+            href="/about"
+            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+          >
+            <!-- <IconArrowNarrowRight /> -->
+            BOOK NOW
+          </HeroButton>
+        </div>
+      </div>
+    </card>
+  </div>
+</div>

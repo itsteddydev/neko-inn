@@ -1,0 +1,252 @@
+---
+import HeroButton from "../icons/HeroButton.astro";
+import IconArrowNarrowLeft from "../icons/IconArrowNarrowLeft.astro";
+import IconArrowNarrowRight from "../icons/IconArrowNarrowRight.astro";
+import IconCircleCheck from "../icons/IconCircleCheck.astro";
+import IconCrown from "../icons/IconCrown.astro";
+import IconHome from "../icons/IconHome.astro";
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import IconQuote from "../icons/IconQuote.astro";
+import IconRoyalCrown from "../icons/IconRoyalCrown.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div class="grid grid-cols-1 gap-8 pt-0 mx-7">
+  <div class="text-center mb-3">
+    <span class="flex flex-col space-y-0">
+      <span
+        class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+      >
+        Pawsitive Reviews from Happy
+      </span>
+
+      <span
+        class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+      >
+        Customers
+      </span>
+    </span>
+    <h1 class="py-6 text-4xl font-bold dark:text-night-text">
+      They Celebrate NekoInn
+    </h1>
+    <div>
+      <p class="text-sm text-pretty dark:text-night-text">
+        Discover what our clients have to say about their experiences at
+        NekoInn. Their testimonials speak volumes about the exceptional care and
+        service we provide for their beloved feline companions.
+      </p>
+    </div>
+  </div>
+
+  <div class="relative px-0 flex rounded-lg aspect-square object-cover">
+    <!-- slidet 0 -->
+    <input id="slidet-0" name="carouselt" type="radio" class="hidden" checked />
+    <div
+      class="absolute inset-0 flex items-center justify-center content-center opacity-100 transition-opacity duration-500"
+    >
+      <label for="slidet-5" class="back flex items-center justify-center">
+        <span class="absolute z-20 p-3 -left-2 rounded-full cursor-pointer">
+        </span>
+        <HeroButton
+          class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+        >
+          <IconArrowNarrowLeft />
+        </HeroButton>
+      </label>
+      <div class="slidet-content w-full">
+        <div
+          class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+        >
+          <span
+            class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
+          >
+            <IconQuote />
+          </span>
+
+          <div class="h-24">
+            <p class="text-[10px] text-balance dark:text-night-text">
+              Leaving my cat at NekoInn was the best decision I ever made. The
+              staff went above and beyond to ensure that my furry friend felt
+              loved and cared for. I received regular updates and photos, which
+              put my mind at ease during my time away. Thank you, NekoInn, for
+              providing such a wonderful home away from home for my cat!
+            </p>
+          </div>
+
+          <div
+            class="flex justify-start items-center content-center mt-6 gap-4"
+          >
+            <img
+              src="/src/assets/img/test-emily.png"
+              class="size-16 rounded-full border-day-main border-[3px] object-none object-top"
+              alt=""
+            />
+            <span class="text-sm font-bold dark:text-night-text">Emily S</span>
+          </div>
+        </div>
+      </div>
+      <label for="slidet-1" class="forward flex items-center justify-center">
+        <span class="absolute z-20 p-3 -right-2 rounded-full cursor-pointer">
+        </span>
+        <HeroButton
+          class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+        >
+          <IconArrowNarrowRight />
+        </HeroButton>
+      </label>
+    </div>
+
+    <!-- slidet 1 -->
+    <input id="slidet-1" name="carouselt" type="radio" class="hidden" />
+    <div
+      class="absolute inset-0 flex items-center justify-center content-center opacity-100 transition-opacity duration-500"
+    >
+      <label for="slidet-0" class="back flex items-center justify-center">
+        <span class="absolute z-20 p-3 -left-2 rounded-full cursor-pointer">
+        </span>
+        <HeroButton
+          class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+        >
+          <IconArrowNarrowLeft />
+        </HeroButton>
+      </label>
+      <div class="slidet-content w-full">
+        <div
+          class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+        >
+          <span
+            class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
+          >
+            <IconQuote />
+          </span>
+
+          <div class="h-24">
+            <p class="text-[10px] text-balance dark:text-night-text">
+              I cannot recommend NekoInn enough! From the moment I walked in, I
+              knew my cat would be in good hands. The facilities are clean and
+              spacious, and the staff is incredibly friendly and attentive. My
+              cat came back home relaxed and happy, and I will definitely be
+              using NekoInn for all my future boarding needs.
+            </p>
+          </div>
+
+          <div
+            class="flex justify-start items-center content-center mt-6 gap-4"
+          >
+            <img
+              src="/src/assets/img/test-mark.png"
+              class="size-16 rounded-full border-day-main border-[3px] object-none object-top"
+              alt=""
+            />
+            <span class="text-sm font-bold dark:text-night-text">Mark T</span>
+          </div>
+        </div>
+      </div>
+      <label for="slidet-2" class="forward flex items-center justify-center">
+        <span class="absolute z-20 p-3 -right-2 rounded-full cursor-pointer">
+        </span>
+        <HeroButton
+          class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+        >
+          <IconArrowNarrowRight />
+        </HeroButton>
+      </label>
+    </div>
+
+    <!-- slidet 2 -->
+    <input id="slidet-2" name="carouselt" type="radio" class="hidden" />
+    <div
+      class="absolute inset-0 flex items-center justify-center content-center opacity-100 transition-opacity duration-500"
+    >
+      <label for="slidet-1" class="back flex items-center justify-center">
+        <span class="absolute z-20 p-3 -left-2 rounded-full cursor-pointer">
+        </span>
+        <HeroButton
+          class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+        >
+          <IconArrowNarrowLeft />
+        </HeroButton>
+      </label>
+      <div class="slidet-content w-full">
+        <div
+          class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+        >
+          <span
+            class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
+          >
+            <IconQuote />
+          </span>
+
+          <div class="h-24">
+            <p class="text-[10px] text-balance dark:text-night-text">
+              NekoInn made the experience so much easier. Their personalized
+              care and attention to detail set them apart from other boarding
+              facilities. I loved receiving updates and photos of my cat
+              enjoying her stay. I have complete peace of mind knowing she's in
+              the care of such dedicated professionals. Thank you, NekoInn!
+            </p>
+          </div>
+
+          <div
+            class="flex justify-start items-center content-center mt-6 gap-4"
+          >
+            <img
+              src="/src/assets/img/test-cristy.png"
+              class="size-16 rounded-full border-day-main border-[3px] object-none object-top"
+              alt=""
+            />
+            <span class="text-sm font-bold dark:text-night-text">Cristy K</span>
+          </div>
+        </div>
+      </div>
+      <label for="slidet-0" class="forward flex items-center justify-center">
+        <span class="absolute z-20 p-3 -right-2 rounded-full cursor-pointer">
+        </span>
+        <HeroButton
+          class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+        >
+          <IconArrowNarrowRight />
+        </HeroButton>
+      </label>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Ocultar los slidets por defecto */
+  input[name="carouselt"]:not(:checked) + div {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* Mostrar el slidet activo */
+  input[name="carouselt"]:checked + div {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .slidet-content {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  input[name="carouselt"]:checked + div .slidet-content {
+    opacity: 1;
+  }
+  /* .back,
+  .forward {
+    @apply absolute top-1/2 transform -translate-y-1/2 h-16 w-8 flex items-center justify-center text-sm bg-green-200 text-green-800 rounded-full shadow-md transition-transform hover:scale-110;
+  } */
+
+  /* .back {
+    @apply left-4;
+  } */
+
+  /* .forward {
+    @apply right-4;
+  } */
+
+  /* h1 {
+    @apply text-5xl text-white drop-shadow-lg;
+  } */
+</style>
