@@ -1,5 +1,8 @@
 ---
+import HeroButton from "../icons/HeroButton.astro";
+import IconArrowNarrowLeft from "../icons/IconArrowNarrowLeft.astro";
 import IconArrowNarrowRight from "../icons/IconArrowNarrowRight.astro";
+import IconHome from "../icons/IconHome.astro";
 import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -11,30 +14,6 @@ const images = [
   "/src/assets/img/cat_2.png",
   "/src/assets/img/cat_13.png",
 ];
-
-let currentIndex = 0;
-
-const nextSlide = () => {
-  const slider = document.getElementById("slider");
-  if (currentIndex < images.length - 1) {
-    currentIndex++;
-    updateSlider();
-  }
-};
-
-const prevSlide = () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlider();
-  }
-};
-
-const updateSlider = () => {
-  const slider = document.getElementById("slider");
-  if (slider) {
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-};
 ---
 
 <div class="grid grid-cols-1 gap-4 my-3 mx-7">
@@ -150,5 +129,137 @@ const updateSlider = () => {
     </card>
   </div>
 
-  <div class="midiv"></div>
+  <div class="pb-14 pt-4">
+    <div class="">
+      <section class="relative px-0 flex rounded-lg aspect-square object-cover">
+        <input
+          id="slide-0"
+          name="carousel"
+          type="radio"
+          class="hidden"
+          checked
+        />
+        <div
+          class="absolute inset-0 flex items-center justify-center content-center opacity-100 transition-opacity duration-500"
+        >
+          <label for="slide-5" class="back">
+            <span
+              class="absolute z-20 p-4 -left-4 rounded-full flex items-center justify-center bg-white/50"
+            >
+            </span>
+            <HeroButton
+              class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2"
+            >
+              <IconArrowNarrowLeft />
+            </HeroButton>
+          </label>
+          <div class="slide-content">
+            <img
+              src="/src/assets/img/cat_9.png"
+              alt="Cat Vectorized"
+              class="aspect-square w-auto rounded-lg shadow-lg dark:shadow-none dark:bg-night-background dark:border-0 object-cover z-10"
+            />
+          </div>
+          <label for="slide-1" class="forward">
+            <span
+              class="absolute z-20 p-4 -right-4 rounded-full flex items-center justify-center bg-white/50"
+            >
+            </span>
+            <HeroButton
+              class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2"
+            >
+              <IconArrowNarrowRight />
+            </HeroButton>
+          </label>
+
+          <HeroButton
+            class="absolute z-10 right-12 -bottom-10 dark:bg-day-main dark:text-night-text rounded-full p-4"
+          >
+            <IconHome class="size-12" />
+          </HeroButton>
+        </div>
+
+        <!-- slide 1 -->
+        <input id="slide-1" name="carousel" type="radio" class="hidden" />
+        <div
+          class="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-500"
+        >
+          <label for="slide-0" class="back">
+            <span
+              class="absolute z-20 p-4 -left-4 rounded-full flex items-center justify-center bg-white/50"
+            >
+            </span>
+            <HeroButton
+              class="absolute z-10 -left-4 dark:bg-day-main dark:text-night-text rounded-full p-2"
+            >
+              <IconArrowNarrowLeft class="" />
+            </HeroButton>
+          </label>
+          <div class="slide-content">
+            <img
+              src="/src/assets/img/cat_10.png"
+              alt="Cat Vectorized"
+              class="aspect-square rounded-lg shadow-lg dark:shadow-none dark:bg-night-background dark:border-0 object-cover"
+            />
+          </div>
+          <label for="slide-2" class="forward">
+            <span
+              class="absolute z-20 p-4 -right-4 rounded-full flex items-center justify-center bg-white/50"
+            >
+            </span>
+            <HeroButton
+              class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2"
+            >
+              <IconArrowNarrowRight />
+            </HeroButton>
+          </label>
+
+          <HeroButton
+            class="absolute z-10 right-12 -bottom-10 dark:bg-day-main dark:text-night-text rounded-full p-4"
+          >
+            <IconHome class="size-12" />
+          </HeroButton>
+        </div>
+      </section>
+    </div>
+  </div>
 </div>
+
+<style>
+  /* Ocultar los slides por defecto */
+  input[name="carousel"]:not(:checked) + div {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* Mostrar el slide activo */
+  input[name="carousel"]:checked + div {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .slide-content {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  input[name="carousel"]:checked + div .slide-content {
+    opacity: 1;
+  }
+  /* .back,
+  .forward {
+    @apply absolute top-1/2 transform -translate-y-1/2 h-16 w-8 flex items-center justify-center text-sm bg-green-200 text-green-800 rounded-full shadow-md transition-transform hover:scale-110;
+  } */
+
+  /* .back {
+    @apply left-4;
+  } */
+
+  /* .forward {
+    @apply right-4;
+  } */
+
+  /* h1 {
+    @apply text-5xl text-white drop-shadow-lg;
+  } */
+</style>
