@@ -1,0 +1,145 @@
+---
+import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 my-3 mx-7 dark:bg-night-backgroundCard rounded-3xl"
+>
+  <div class="text-center">
+    <span
+      class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
+    >
+      Secure Your Cat's Stay Today
+    </span>
+    <h1 class="py-6 text-4xl font-bold dark:text-night-text">Book Now</h1>
+    <div>
+      <p class="text-xs px-8 text-pretty dark:text-night-text">
+        Ready to reserve your cat's spot at NekoInn? Our easy-to-use booking
+        system makes it simple to schedule your cat's stay with us. Just select
+        your desired dates, choose from our range of accommodations and
+        services, and complete your reservation in a few easy steps.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid gap-6 pt-9 pb-2 text-center mx-7">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >Full Name</label
+        >
+        <input
+          type="text"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="Eg. Jane Doe "
+        />
+      </div>
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >EMAIL</label
+        >
+        <input
+          type="email"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="Eg. janedoe@gmail.com"
+        />
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >PHONE NUMBER</label
+        >
+        <input
+          type="text"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="100-616-6060"
+        />
+      </div>
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >CAT NAME</label
+        >
+        <input
+          type="text"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="Eg. Timothy"
+        />
+      </div>
+    </div>
+    <div class="grid grid-cols-1">
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >PICK A DATE</label
+        >
+        <input
+          type="text"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="July 16th, 2024 - 9:26 PM"
+        />
+      </div>
+    </div>
+    <div class="grid grid-cols-1">
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >How many pets?</label
+        >
+        <input
+          type="text"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="6"
+        />
+      </div>
+    </div>
+    <div class="grid grid-cols-1">
+      <div
+        class="py-2 pl-4 flex flex-col gap-2 justify-start content-center items-start rounded-[28px] w-full border-2"
+      >
+        <label
+          for="name"
+          class="uppercase dark:text-night-text text-xs tracking-widest"
+          >purr plan</label
+        >
+        <input
+          type="text"
+          class="outline-none dark:bg-transparent dark:text-night-text"
+          placeholder="Purr Royal"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-center my-6">
+      <LinkButton
+        href="/about"
+        class="dark:bg-day-main dark:text-night-text font-bold py-6 mx-7 text-xs w-full rounded-full"
+      >
+        BOOK NOW
+      </LinkButton>
+    </div>
+  </div>
+</div>
