@@ -16,36 +16,42 @@ import Footer from "../components/Footer.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Header class="p-7 dark:bg-night-backgroundCard" />
-<Layout
-  title="Astro"
-  description="Astro is a fresh but familiar approach to building websites. Astro combines decades of proven performance best practices with the DX improvements of the component-oriented era."
->
-  <main class="">
-    <SectionContainer class="dark:bg-night-backgroundCard rounded-b-3xl">
-      <Hero />
-    </SectionContainer>
-    <SectionContainer class="mt-20">
-      <About />
-    </SectionContainer>
-    <SectionContainer class="mt-10">
-      <Rooms />
-    </SectionContainer>
-    <SectionContainer class="mt-10">
-      <PureCare />
-    </SectionContainer>
-    <SectionContainer class="mt-10">
-      <Pricing />
-    </SectionContainer>
-    <SectionContainer class="mt-10">
-      <Testimonial />
-    </SectionContainer>
-    <SectionContainer class="mt-10">
-      <BookNow />
-    </SectionContainer>
-    <SectionContainer class="mt-10">
-      <Newsletter />
-    </SectionContainer>
-  </main>
-</Layout>
-<Footer />
+<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+  <Header class="p-7 dark:bg-night-backgroundCard md:px-16" />
+  <SectionContainer
+    class="dark:bg-night-backgroundCard rounded-b-[50px] md:px-16"
+  >
+    <Hero />
+  </SectionContainer>
+  <Layout
+    title="Astro"
+    description="Astro is a fresh but familiar approach to building websites. Astro combines decades of proven performance best practices with the DX improvements of the component-oriented era."
+  >
+    <main class="overflow-y-auto">
+      <div class="max-w-[1200px] mx-auto">
+        <SectionContainer class="mt-20">
+          <About />
+        </SectionContainer>
+        <SectionContainer class="mt-10">
+          <Rooms />
+        </SectionContainer>
+        <SectionContainer class="mt-10">
+          <PureCare />
+        </SectionContainer>
+        <SectionContainer class="mt-10">
+          <Pricing />
+        </SectionContainer>
+        <SectionContainer class="mt-10">
+          <Testimonial />
+        </SectionContainer>
+        <SectionContainer class="mt-10">
+          <BookNow />
+        </SectionContainer>
+        <SectionContainer class="mt-10">
+          <Newsletter />
+        </SectionContainer>
+      </div>
+    </main>
+  </Layout>
+  <Footer />
+</div>
