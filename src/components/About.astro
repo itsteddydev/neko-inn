@@ -4,9 +4,9 @@ import LinkButton from "./LinkButton.astro";
 ---
 
 <div
-  class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 my-3 mx-7 dark:bg-night-backgroundCard rounded-3xl"
+  class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 my-3 mx-7 md:pl-7 dark:bg-night-backgroundCard rounded-3xl"
 >
-  <div class="text-center">
+  <div class="text-center md:text-start md:py-24">
     <span
       class="font-bold uppercase text-[10px] tracking-[0.2em] dark:text-night-subtitles"
     >
@@ -14,7 +14,7 @@ import LinkButton from "./LinkButton.astro";
     </span>
     <h1 class="py-6 text-4xl font-bold dark:text-night-text">About NekoInn</h1>
     <div>
-      <p class="text-xs px-8 text-pretty dark:text-night-text">
+      <p class="text-xs px-8 md:px-0 text-pretty dark:text-night-text">
         NekoInn is more than a cat boarding facility; it's a home away from home
         for your furry family members. Nestled in serene surroundings, our inn
         offers a tranquil retreat for cats of all shapes, sizes, and
@@ -24,33 +24,28 @@ import LinkButton from "./LinkButton.astro";
       </p>
     </div>
 
-    <div class="flex justify-center my-6">
+    <div class="flex justify-center my-6 md:block">
       <LinkButton
         href="/about"
-        class="dark:bg-day-main dark:text-night-text font-bold py-6 mx-7 text-xs w-full rounded-full"
+        class="dark:bg-day-main dark:text-night-text font-bold py-6 mx-7 text-xs w-full rounded-full md:w-2 md:mx-0 md:px-6 md:py-3"
       >
         BOOK NOW
       </LinkButton>
     </div>
   </div>
 
-  <div class="relative pt-9 pb-2">
+  <div class="relative pt-9 pb-2 md:pt-2">
     <img
       src="/src/assets/img/stripes.png"
       alt="stripes"
       class="absolute right-[9%] top-[15%] object-cover"
     />
-    <!-- <img
-      src="/src/assets/img/stripes.png"
-      alt="stripes"
-      class="absolute bottom-6 right-0 object-cover"
-    /> -->
 
-    <div class="relative mb-14">
+    <div class="relative mb-14 md:mb-0 md:flex md:justify-end">
       <img
         src="/src/assets/img/CatVectorized.png"
         alt="Cat Vectorized"
-        class="w-[376px] h-[401px] object-none object-left hover:drop-shadow-md"
+        class="w-[376px] h-[401px] md:w-[400px] md:h-[425px] object-none object-left hover:drop-shadow-md"
       />
     </div>
   </div>
