@@ -9,6 +9,27 @@ import IconPlayerPlay from "../icons/IconPlayerPlay.astro";
 import IconQuote from "../icons/IconQuote.astro";
 import IconRoyalCrown from "../icons/IconRoyalCrown.astro";
 import LinkButton from "./LinkButton.astro";
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Emily S",
+    img: "/src/assets/img/test-emily.png",
+    text: "Leaving my cat at NekoInn was the best decision I ever made. The staff went above and beyond to ensure that my furry friend felt loved and cared for. I received regular updates and photos, which put my mind at ease during my time away. Thank you, NekoInn, for providing such a wonderful home away from home for my cat!",
+  },
+  {
+    id: 2,
+    name: "Mark T",
+    img: "/src/assets/img/test-mark.png",
+    text: "I cannot recommend NekoInn enough! From the moment I walked in, I knew my cat would be in good hands. The facilities are clean and spacious, and the staff is incredibly friendly and attentive. My cat came back home relaxed and happy, and I will definitely be using NekoInn for all my future boarding needs.",
+  },
+  {
+    id: 3,
+    name: "Cristy K",
+    img: "/src/assets/img/test-cristy.png",
+    text: "NekoInn made the experience so much easier. Their personalized care and attention to detail set them apart from other boarding facilities. I loved receiving updates and photos of my cat enjoying her stay. I have complete peace of mind knowing she's in the care of such dedicated professionals. Thank you, NekoInn!",
+  },
+];
 ---
 
 <div class="grid grid-cols-1 gap-8 pt-0 mx-7">
@@ -38,7 +59,61 @@ import LinkButton from "./LinkButton.astro";
     </div>
   </div>
 
-  <div class="relative px-0 flex rounded-lg aspect-square object-cover">
+  <!-- web -->
+  <div
+    class="relative md:flex items-center justify-center opacity-100 transition-opacity duration-500 hidden"
+  >
+    <HeroButton
+      id="prev-btn"
+      class="absolute -left-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+    >
+      <IconArrowNarrowLeft />
+    </HeroButton>
+
+    <div
+      id="carousel"
+      class="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden"
+    >
+      {
+        testimonials.map((testimonial) => (
+          <div
+            class=" grid-cols-1 testimonial-card bg-white p-4 text-left  dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+            data-id={testimonial.id}
+          >
+            <span class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between">
+              <IconQuote />
+            </span>
+            <div class="h-48 md:h-52 lg:h-36">
+              <p class="text-[10px] text-balance dark:text-night-text">
+                {testimonial.text}
+              </p>
+            </div>
+            <div class="relative bottom-16 ">
+              <div class="absolute flex justify-start items-center content-center mt-6 gap-4">
+                <img
+                  src={testimonial.img}
+                  class="size-16 rounded-full border-day-main border-[3px] object-none object-top"
+                  alt=""
+                />
+                <span class="text-sm font-bold dark:text-night-text">
+                  {testimonial.name}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <HeroButton
+      id="next-btn"
+      class="absolute -right-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+    >
+      <IconArrowNarrowRight />
+    </HeroButton>
+  </div>
+
+  <!-- mobile -->
+  <div class="relative px-0 my-40 flex rounded-lg md:hidden">
     <!-- slidet 0 -->
     <input id="slidet-0" name="carouselt" type="radio" class="hidden" checked />
     <div
@@ -48,14 +123,14 @@ import LinkButton from "./LinkButton.astro";
         <span class="absolute z-20 p-3 -left-2 rounded-full cursor-pointer">
         </span>
         <HeroButton
-          class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+          class="absolute -left-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
         >
           <IconArrowNarrowLeft />
         </HeroButton>
       </label>
       <div class="slidet-content w-full">
         <div
-          class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+          class="text-left bg-white dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
         >
           <span
             class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
@@ -89,7 +164,7 @@ import LinkButton from "./LinkButton.astro";
         <span class="absolute z-20 p-3 -right-2 rounded-full cursor-pointer">
         </span>
         <HeroButton
-          class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+          class="absolute -right-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
         >
           <IconArrowNarrowRight />
         </HeroButton>
@@ -105,14 +180,14 @@ import LinkButton from "./LinkButton.astro";
         <span class="absolute z-20 p-3 -left-2 rounded-full cursor-pointer">
         </span>
         <HeroButton
-          class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+          class="absolute -left-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
         >
           <IconArrowNarrowLeft />
         </HeroButton>
       </label>
       <div class="slidet-content w-full">
         <div
-          class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+          class="text-left bg-white dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
         >
           <span
             class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
@@ -146,7 +221,7 @@ import LinkButton from "./LinkButton.astro";
         <span class="absolute z-20 p-3 -right-2 rounded-full cursor-pointer">
         </span>
         <HeroButton
-          class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+          class="absolute -right-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
         >
           <IconArrowNarrowRight />
         </HeroButton>
@@ -162,14 +237,14 @@ import LinkButton from "./LinkButton.astro";
         <span class="absolute z-20 p-3 -left-2 rounded-full cursor-pointer">
         </span>
         <HeroButton
-          class="absolute -left-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+          class="absolute -left-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
         >
           <IconArrowNarrowLeft />
         </HeroButton>
       </label>
       <div class="slidet-content w-full">
         <div
-          class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+          class="text-left bg-white dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
         >
           <span
             class="font-bold mb-6 uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
@@ -203,7 +278,7 @@ import LinkButton from "./LinkButton.astro";
         <span class="absolute z-20 p-3 -right-2 rounded-full cursor-pointer">
         </span>
         <HeroButton
-          class="absolute -right-4 z-10 dark:bg-day-main dark:text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
+          class="absolute -right-4 z-10 bg-day-main text-night-text rounded-full p-2 transform shadow-md transition-transform hover:scale-110"
         >
           <IconArrowNarrowRight />
         </HeroButton>
@@ -250,3 +325,27 @@ import LinkButton from "./LinkButton.astro";
     @apply text-5xl text-white drop-shadow-lg;
   } */
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carousel");
+    const nextBtn = document.getElementById("next-btn");
+    const prevBtn = document.getElementById("prev-btn");
+
+    if (!carousel || !nextBtn || !prevBtn) return;
+
+    nextBtn.addEventListener("click", () => {
+      const cards = Array.from(carousel.children);
+      if (cards.length > 0) {
+        carousel.appendChild(cards[0]); // Mueve la primera card al final
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      const cards = Array.from(carousel.children);
+      if (cards.length > 0) {
+        carousel.prepend(cards[cards.length - 1]); // Mueve la última card al inicio
+      }
+    });
+  });
+</script>

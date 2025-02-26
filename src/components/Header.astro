@@ -28,7 +28,7 @@ const { class: className, id } = Astro.props;
       class="fixed inset-y-0 right-0 w-[406px] md:w-auto translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-40 md:static md:translate-x-0"
     >
       <ul
-        class="absolute right-0 top-8 p-4 bg-day-main w-[60%] rounded-s-2xl h-max text-center grid gap-11 font-bold text-sm text-white
+        class="absolute right-0 top-8 p-4 bg-day-main w-[60%] rounded-s-2xl h-max text-center grid gap-11 font-bold text-sm text-day-text dark:text-night-text
     md:w-max md:static md:bg-transparent md:p-0 md:grid-flow-col md:flex md:items-center"
       >
         <li>
@@ -57,7 +57,7 @@ const { class: className, id } = Astro.props;
           <HeroButton
             aria-label="btn-theme"
             id="toggle-themeMobile"
-            class="h-auto flex items-center bg-day-main border-2 p-1 w-auto rounded-full hover:bg-day-secondary hover:dark:bg-day-secondary transition-transform hover:rotate-180 dark:rotate-0 duration-100 ease-in-out"
+            class="h-auto flex items-center bg-day-main border-2 p-1 w-auto rounded-full hover:bg-day-secondary hover:dark:bg-day-secondary text-white transition-transform hover:rotate-180 dark:rotate-0 duration-100 ease-in-out"
           >
             <IconSun class="size-7 dark:hidden" />
             <IconMoon class="size-7 hidden dark:inline" />
@@ -65,7 +65,7 @@ const { class: className, id } = Astro.props;
         </li>
         <li>
           <div class="mt-4 md:mt-0">
-            <button class="bg-day-secondary rounded-xl px-4 py-3 text-xs"
+            <button class="bg-day-main text-white rounded-xl px-4 py-3 text-xs"
               >BOOK NOW</button
             >
           </div>
@@ -79,50 +79,53 @@ const { class: className, id } = Astro.props;
   const themeToggle = document.getElementById("toggle-theme");
   const themetoggleMobile = document.getElementById("toggle-themeMobile");
   const htmlElement = document.documentElement;
+  const storageKey = "theme"; // Clave para el almacenamiento local
 
-  // Detectar el esquema de color del sistema y aplicarlo al cargar la página
-  const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
-    .matches
-    ? "dark"
-    : "light";
-  if (preferredTheme === "dark") {
-    htmlElement.classList.add("dark");
+  // Función para aplicar el tema
+  function applyTheme(theme: string) {
+    if (theme === "dark") {
+      htmlElement.classList.add("dark");
+      localStorage.setItem(storageKey, "dark");
+    } else {
+      htmlElement.classList.remove("dark");
+      localStorage.setItem(storageKey, "light");
+    }
+  }
+
+  // Obtener el tema guardado o el preferido por el sistema
+  const savedTheme = localStorage.getItem(storageKey);
+  if (savedTheme) {
+    applyTheme(savedTheme);
   } else {
-    htmlElement.classList.remove("dark");
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    applyTheme(preferredTheme);
   }
 
   // Escuchar cambios en el esquema de color del sistema
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (event) => {
-      if (event.matches) {
-        htmlElement.classList.add("dark");
-      } else {
-        htmlElement.classList.remove("dark");
-      }
+      applyTheme(event.matches ? "dark" : "light");
     });
 
   // Alternar el tema manualmente con el botón
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      htmlElement.classList.toggle("dark");
+      const newTheme = htmlElement.classList.contains("dark")
+        ? "light"
+        : "dark";
+      applyTheme(newTheme);
     });
   }
-
   if (themetoggleMobile) {
     themetoggleMobile.addEventListener("click", () => {
-      htmlElement.classList.toggle("dark");
+      const newTheme = htmlElement.classList.contains("dark")
+        ? "light"
+        : "dark";
+      applyTheme(newTheme);
     });
   }
-
-  // //mover li
-  // const lista = document.querySelector("ul");
-  // if (lista) {
-  //   const primerElemento = lista.querySelector("li:first-child");
-  //   const penultimoElemento =
-  //     lista.querySelectorAll("li")[lista.querySelectorAll("li").length - 2];
-  //   if (primerElemento && penultimoElemento) {
-  //     lista.insertBefore(primerElemento, penultimoElemento);
-  //   }
-  // }
 </script>

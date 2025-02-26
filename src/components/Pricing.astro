@@ -24,7 +24,7 @@ import LinkButton from "./LinkButton.astro";
         companion
       </span>
     </span>
-    <h1 class="py-6 text-4xl font-bold dark:text-night-text">Pricing</h1>
+    <h2 class="py-6 text-4xl font-bold dark:text-night-text">Pricing</h2>
     <div>
       <p class="text-sm text-pretty dark:text-night-text">
         In our Pricing Section, transparency meets affordability. At NekoInn, we
@@ -35,12 +35,12 @@ import LinkButton from "./LinkButton.astro";
   </div>
 
   <div
-    class="grid grid-cols-1 sm:grid-cols-4 space-y-12 pb-12 rounded-3xl pt-9"
+    class="grid grid-cols-1 gap-12 md:gap-0 md:grid-cols-3 md:-space-x-5 pb-12 pt-6 rounded-3xl items-center"
   >
     <!-- card 1 -->
-    <card>
+    <card class="z-0">
       <div
-        class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+        class="text-left bg-white dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
       >
         <span
           class="font-bold uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
@@ -53,7 +53,7 @@ import LinkButton from "./LinkButton.astro";
         </h2>
         <div>
           <ul
-            class="text-xs text-wrap dark:text-night-subtitles flex flex-col py-4 space-y-4"
+            class="text-xs text-wrap text-night-subtitles flex flex-col py-4 space-y-4"
           >
             <li class="flex justify-start content-between items-center gap-2">
               <IconCircleCheck /> Standard Room Accommodation
@@ -76,7 +76,7 @@ import LinkButton from "./LinkButton.astro";
         <div class="flex justify-center mt-6">
           <HeroButton
             href="/about"
-            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+            class="flex justify-start items-center content-start gap-2 bg-day-main text-night-text font-bold text-xs rounded-full py-2 px-7"
           >
             <!-- <IconArrowNarrowRight /> -->
             BOOK NOW
@@ -85,9 +85,9 @@ import LinkButton from "./LinkButton.astro";
       </div>
     </card>
     <!-- card 2 -->
-    <card>
+    <card class="z-10">
       <div
-        class="text-left bg-day-main dark:bg-day-main rounded-3xl py-9 px-10"
+        class="text-left bg-day-main dark:bg-day-main rounded-3xl py-12 px-10"
       >
         <span
           class="font-bold uppercase text-base tracking-[0.1em] dark:text-night-text text-night-text flex items-center justify-between"
@@ -95,12 +95,12 @@ import LinkButton from "./LinkButton.astro";
           Purr imperial <IconRoyalCrown />
         </span>
 
-        <h2 class="py-6 text-4xl font-bold dark:text-night-text">
+        <h2 class="py-6 text-4xl font-bold text-night-text">
           $600.99 <span class="text-sm">PER DAY</span>
         </h2>
         <div>
           <ul
-            class="text-xs text-wrap dark:text-night-text text-night-text flex flex-col py-4 space-y-4"
+            class="text-xs text-wrap text-night-text flex flex-col py-4 space-y-4"
           >
             <li class="flex justify-start content-between items-center gap-2">
               <IconCircleCheck /> Standard Room Accommodation
@@ -123,7 +123,7 @@ import LinkButton from "./LinkButton.astro";
         <div class="flex justify-center mt-6">
           <HeroButton
             href="/about"
-            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+            class="flex justify-start items-center content-start gap-2 bg-day-secondary text-night-text font-bold text-xs rounded-full py-2 px-7"
           >
             <!-- <IconArrowNarrowRight /> -->
             BOOK NOW
@@ -132,9 +132,9 @@ import LinkButton from "./LinkButton.astro";
       </div>
     </card>
     <!-- card 3 -->
-    <card>
+    <card class="z-0">
       <div
-        class="text-left bg-night-backgroundCard dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
+        class="text-left bg-white dark:bg-night-backgroundCard rounded-3xl py-8 px-10"
       >
         <span
           class="font-bold uppercase text-base tracking-[0.1em] dark:text-day-main text-day-main flex items-center justify-between"
@@ -147,7 +147,7 @@ import LinkButton from "./LinkButton.astro";
         </h2>
         <div>
           <ul
-            class="text-xs text-wrap dark:text-night-subtitles flex flex-col py-4 space-y-4"
+            class="text-xs text-wrap text-night-subtitles flex flex-col py-4 space-y-4"
           >
             <li class="flex justify-start content-between items-center gap-2">
               <IconCircleCheck /> Luxury Suite Accommodation
@@ -170,7 +170,7 @@ import LinkButton from "./LinkButton.astro";
         <div class="flex justify-center mt-6">
           <HeroButton
             href="/about"
-            class="flex justify-start items-center content-start gap-2 dark:bg-day-secondary dark:text-night-text font-bold text-xs rounded-full py-2 px-7"
+            class="flex justify-start items-center content-start gap-2 bg-day-main text-night-text font-bold text-xs rounded-full py-2 px-7"
           >
             <!-- <IconArrowNarrowRight /> -->
             BOOK NOW
