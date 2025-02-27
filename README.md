@@ -1,8 +1,12 @@
+[![wakatime](https://wakatime.com/badge/user/be9b08b7-fde8-4036-845c-3f2a3b19521b/project/d51c00fa-5487-4830-873e-99577e2c4f9b.svg)](https://wakatime.com/badge/user/be9b08b7-fde8-4036-845c-3f2a3b19521b/project/d51c00fa-5487-4830-873e-99577e2c4f9b)
+
 # Astro Starter Kit: Basics
 
 ```sh
 npm create astro@latest -- --template basics
 ```
+
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
