@@ -8,7 +8,7 @@ export default {
 			//      ### Fonts
 			fontFamily: {
 				// #### Headings, Call- to - actions, Header Navigation
-				"sans": ['Poppins', "sans-serif" /*, "system-ui"*/], // Usando la fuente personalizada
+				"sans": ["Poppins", "sans-serif" /*, "system-ui"*/], // Usando la fuente personalizada
 				// #### Body
 				// "serif": ['"Open Sans"', "serif"], // Otra fuente para el cuerpo
 			},

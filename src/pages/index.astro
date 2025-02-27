@@ -11,13 +11,15 @@ import Testimonial from "../components/Testimonial.astro";
 import BookNow from "../components/BookNow.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/Footer.astro";
+import HeroButton from "../icons/HeroButton.astro";
+import IconChevronDown from "../icons/IconChevronDown.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
-  <Header class="p-7 dark:bg-night-backgroundCard md:px-16" />
+  <Header class="p-7 dark:bg-night-backgroundCard" />
   <SectionContainer
     class="dark:bg-night-backgroundCard bg-white rounded-b-[50px] md:px-16"
   >
@@ -29,29 +31,66 @@ import Footer from "../components/Footer.astro";
   >
     <main class="overflow-y-auto">
       <div class="max-w-[1200px] mx-auto">
-        <SectionContainer class="mt-20">
+        <SectionContainer id="about" class="mt-20">
           <About />
         </SectionContainer>
-        <SectionContainer class="mt-10">
+        <SectionContainer id="rooms" class="mt-10">
           <Rooms />
         </SectionContainer>
-        <SectionContainer class="mt-10">
+        <SectionContainer id="pure-care" class="mt-10">
           <PureCare />
         </SectionContainer>
-        <SectionContainer class="mt-10">
+        <SectionContainer id="procing" class="mt-10">
           <Pricing />
         </SectionContainer>
-        <SectionContainer class="mt-10">
+        <SectionContainer id="testimonial" class="mt-10">
           <Testimonial />
         </SectionContainer>
-        <SectionContainer class="mt-10">
+        <SectionContainer id="book-now" class="mt-10">
           <BookNow />
-        </SectionContainer>
-        <SectionContainer class="mt-10">
-          <Newsletter />
         </SectionContainer>
       </div>
     </main>
   </Layout>
+
+  <SectionContainer id="newsletter" class="mt-10">
+    <Newsletter />
+  </SectionContainer>
+
   <Footer />
+  <!-- <button
+    id="scrollToTop"
+    class="hidden fixed bottom-5 right-5 p-3 bg-blue-600 text-white rounded-full shadow-lg transition-opacity duration-300 hover:bg-blue-700"
+  >
+    up
+  </button> -->
+
+  <HeroButton
+    id="scrollToTop"
+    class="hidden fixed bottom-5 right-5 bg-day-main text-night-text rounded-full p-1"
+  >
+    <IconChevronDown
+      class="size-9 transition-transform hover:rotate-180 duration-300 ease-in-out"
+    />
+  </HeroButton>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollBtn = document.getElementById("scrollToTop");
+
+    if (!scrollBtn) return; // 🔹 Evita errores si el botón no está en el DOM
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.remove("hidden");
+      } else {
+        scrollBtn.classList.add("hidden");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+</script>
